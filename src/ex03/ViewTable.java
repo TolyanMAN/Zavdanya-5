@@ -4,23 +4,33 @@ import java.util.Formatter;
 import ex01.Item2d;
 import ex02.ViewResult;
 /** ConcreteProduct
+
  * (design pattern
+ 
  * Factory Method)<br>
+ 
  * Table output
- * @author Vlada
+ 
+ * @author Maksim
+ 
  * @version 1.0
  * @see ViewResult
  */
 
 public class ViewTable extends ViewResult {
     /** Specifies the default table width */
+    
     private static final int DEFAULT_WIDTH = 40;
+    
     /** Current table width */
+    
     private int width;
 
     /** Sets {@linkplain ViewTable#width width}
+    
      * value {@linkplain ViewTable#DEFAULT_WIDTH DEFAULT_WIDTH}<br>
      * The superclass constructor is called {@linkplain ViewResult#ViewResult() ViewResult()}
+     
      */
     public ViewTable() {
         width = DEFAULT_WIDTH;
@@ -35,10 +45,15 @@ public class ViewTable extends ViewResult {
     }
 
     /** Sets {@linkplain ViewTable#width} value <b>width</b><br>
+    
      * The superclass constructor is called {@linkplain ViewResult#ViewResult(int n) ViewResult(int
+     
     n)}
+    
      * @param width defines the width of the table
+     
      * @param n the number of elements in the collection; passed to the super constructor
+     
      */
     public ViewTable(int width, int n) {
         super(n);
@@ -65,12 +80,14 @@ public class ViewTable extends ViewResult {
         for(int i = width; i > 0; i--) {
             System.out.print('-');
         }
+        
     }
 
     /** Calls {@linkplain ViewTable#outLine()}; terminates the output with a line separator */
     private void outLineLn() {
         outLine();
         System.out.println();
+        
     }
 
     /** Displays the table header width {@linkplain ViewTable#width} symbols*/
@@ -127,8 +144,10 @@ public class ViewTable extends ViewResult {
     /** Table element output <br>{@inheritDoc} */
     @Override
     public void viewHeader() {
+        
         outHeader();
         outLineLn();
+        
     }
 
     /** Table element output <br>{@inheritDoc} */
