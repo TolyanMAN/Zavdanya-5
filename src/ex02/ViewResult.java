@@ -10,11 +10,17 @@ import ex01.Item2d;
 
 /** ConcreteProduct
  * (Design Pattern
+ 
+ 
  * Factory Method)<br>
+ 
  * Function calculation,
  * save and display
- * ðåçóëüòàòîâresults
- * @author Vlada
+ 
+ * Ã°Ã¥Ã§Ã³Ã«Ã¼Ã²Ã Ã²Ã®Ã¢results
+ 
+ * @author Maksim
+ 
  * @version 1.0
  * @see View
  */
@@ -58,14 +64,18 @@ public class ViewResult implements View {
      * @param arguments - arguments of the computed function.
      * @return function evaluation result.
      */
+    
     private byte calc(double []arguments) {
+        
         int number = (int)((Math.sin(arguments[0]) + Math.sin(arguments[1]) + Math.sin(arguments[2]) + Math.sin(arguments[3])) / 4.0 * 1000);
+        
         byte count = 0;
 
         if(number < 0) {
             number *= -1;
         }
 
+        
         while (number > 0) {
             number &= (number - 1);
             count++;
@@ -81,11 +91,14 @@ public class ViewResult implements View {
      */
     public void init(double argumentsStep) {
         double []arguments = new double[]{ 10, 100, 50, 500 };
+        
 
         for(Item2d item: items) {
             item.setOnesNumberAndArguments(calc(arguments), arguments.clone());
+            
 
             for(int i = 0; i < 4; i++) {
+                
                 arguments[i] += argumentsStep;
             }
         }
@@ -135,6 +148,7 @@ public class ViewResult implements View {
     @Override
     public void viewBody() {
         for(Item2d item : items) {
+            
             System.out.println(item);
         }
     }
@@ -144,9 +158,12 @@ public class ViewResult implements View {
      */
     @Override
     public void viewFooter() {
+        
         System.out.println("End.");
     }
+    
 
+    
     /** Method Implementation {@linkplain View#viewShow()}<br>
      * {@inheritDoc}
      */
