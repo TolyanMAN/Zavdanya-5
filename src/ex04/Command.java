@@ -1,9 +1,13 @@
 package ex04;
 /** Command interface
  * or tasks;
+ 
  * шаблоны: Command,
+ 
  * Worker Thread
- * @author Vlada
+ 
+ * @author Maksim
+ 
  * @version 1.0
  */
 public interface Command {
