@@ -5,21 +5,29 @@ import ex02.ViewResult;
 /** Console command
  * Change item;
  * pattern Command
- * @author Vlada
+ * @author Maksim
+ 
  * @version 1.0
  */
+
 public class ChangeConsoleCommand
+        
         extends ChangeItemCommand
+        
         implements ConsoleCommand {
 
     /** An object that implements an interface {@linkplain View};
+    
      * maintains a collection of objects {@linkplain ex01.Item2d}
+     
      */
     private View view;
 
     /** Returns a field {@linkplain ChangeConsoleCommand#view}
+    
      * @return meaning {@linkplain ChangeConsoleCommand#view}
      */
+     
     public View getView() {
         return view;
     }
@@ -48,8 +56,10 @@ public class ChangeConsoleCommand
     @Override
     public void execute() {
         System.out.println("Change item: scale factor " + setOffset(Math.random() * 100.0));
+        
         for (Item2d item : ((ViewResult)view).getItems()) {
             super.setItem(item);
+            
             super.execute();
         }
         view.viewShow();
