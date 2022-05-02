@@ -6,11 +6,13 @@ import java.util.Arrays;
 /**
  * Stores the initial data and the result of calculations.
  *
- * @author Vlada
+ 
+ * @author Maksim
  * @version 1.0
  */
 
 public class Item2d implements Serializable {
+    
     /**
      * The number of units in the number.
      */
@@ -18,6 +20,7 @@ public class Item2d implements Serializable {
 
     /**
      * Function arguments.
+     
      */
     private double []arguments;
 
@@ -36,12 +39,17 @@ public class Item2d implements Serializable {
 
     /**
      * Sets field values: arguments
+     
      * and the result of the function evaluation.
      *
+     
      * @param onesNumber - value to initialize the field {@linkplain Item2d#onesNumber}
+     
      * @param arguments - value to initialize the field {@linkplain Item2d#arguments}
+     
      */
     public Item2d(int onesNumber, double []arguments) {
+        
         this.onesNumber = onesNumber;
         this.arguments = arguments;
     }
@@ -65,12 +73,15 @@ public class Item2d implements Serializable {
         return onesNumber;
     }
 
+    
     /**
      * Setting a field value {@linkplain Item2d#arguments}
      *
+     
      * @param arguments - value for {@linkplain Item2d#arguments}
      * @return value {@linkplain Item2d#arguments}
      */
+    
     public double []setArguments(double []arguments) {
         return this.arguments = arguments;
     }
@@ -85,15 +96,18 @@ public class Item2d implements Serializable {
     }
 
     /**
-     * Setting values  {@linkplain Item2d#onesNumber} è {@linkplain Item2d#arguments}
+     * Setting values  {@linkplain Item2d#onesNumber} Ã¨ {@linkplain Item2d#arguments}
      *
      * @param onesNumber - value for {@linkplain Item2d#onesNumber}
      * @param arguments - value for {@linkplain Item2d#arguments}
      * @return this
      */
     public Item2d setOnesNumberAndArguments(int onesNumber, double []arguments) {
+        
         this.onesNumber = onesNumber;
+        
         this.arguments = arguments;
+        
         return this;
     }
 
@@ -111,9 +125,12 @@ public class Item2d implements Serializable {
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
+            
             return true;
         if (obj == null)
+            
             return false;
+        
         if (getClass() != obj.getClass())
             return false;
         Item2d other = (Item2d) obj;
